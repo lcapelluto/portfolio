@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container row">
+	{% for obj in list %}
+	<div class="col s10 item">
+		<h4 class="cyan-text text-darken-1">{{ obj.school }}</h4>
+		{{ obj.major }}, {{ obj.expected_graduation }}<br>
+		<strong>GPA:</strong> {{ obj.GPA }}<br>
+		{{ obj.awards }}<br>
+		{{ obj.societies }}<br>
+		{{ obj.clubs }}
+	</div>
+	{% endfor %}
+	<img src="http://www.innoveinstitute.com/wp-content/uploads/2014/06/University-of-California-Berkeley-Extension.jpg">
+</div>
+{% endblock %}

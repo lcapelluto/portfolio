@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container row">
+	{% for obj in list %}
+	<div class="col s10 item">
+		<h4 class="cyan-text text-darken-1">{{ obj.title }}</h4>
+		<div class="company">{{ obj.company.name }}, {{ obj.location }}</div>
+		<div class="description">{{ obj.description }}</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}

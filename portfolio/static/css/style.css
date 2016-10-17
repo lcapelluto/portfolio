@@ -1,0 +1,28 @@
+.header-image {
+	background-color: blue;
+	width: 100%;
+	height: 200px;
+	margin-bottom: -10px;
+	overflow: hidden;
+}
+.item {
+	margin: 10px;
+}
+.company {
+	font-style: italic;
+}
+.circular-square {
+  border-radius: 50%;
+}
+.icon {
+	height: 32px;
+}
+.img-circle {
+	max-width:100%;
+}
+.top-pad {
+	margin-top:20px;
+}
+ul {
+	height:100%;
+}

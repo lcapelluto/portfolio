@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container row">
+	<div class="col s3">
+		<h4 class="text-align cyan-text center">Travel</h4>
+		<a href="http://capadoodletravels.blogspot.com.es/"><img src="{% static 'travel.jpg' %}" style="max-width:100%" class="circular-square" ></a>
+	</div>
+	<div class="col s3">
+		<h4 class="text-align center light-blue-text">Cooking</h4>
+		<a href="{% url 'recipes' %}"><img src="{% static 'cooking.png' %}" style="max-width:100%" class="circular-square" ></a>
+		<p class="grey-text text-align center">( aka eating )</p>
+	</div>
+	<div class="col s3">
+		<h4 class="text-align indigo-text center">Equitation</h4>
+		<a href="https://equestrian.berkeley.edu/theteam.html"><img src="{% static 'equestrian.jpg' %}" style="width:100%" class="circular-square" ></a>
+		<p class="text-align center">Cal Equestrian Finance Officer</p>
+	</div>
+	<div class="col s3">
+		<h4 class="text-align blue-text darken-4 center">Triathlons</h4>
+		<a href="http://caltriathlon.com/"> <img src="{% static 'triathlon.jpg' %}" style="max-width:100%" class="circular-square" ></a>
+		<p class="text-align center">Cal Triathlon Sponsorship Chair</p>
+	</div>
+</div>
+{% endblock %}

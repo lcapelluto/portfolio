@@ -1,0 +1,75 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title> Lauren Capelluto </title>
+    {% block favicon %}
+        <link href="{% static 'main/img/favicon.png' %}" rel="shortcut icon">
+    {% endblock %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+</head>
+<body>
+{% block imgheader %}
+<img src="{% static 'header.jpg' %}" class="header-image">
+{% endblock %}
+<nav>
+	<div class="nav-wrapper cyan darken-2">
+		<ul class="left">
+			<a href="{% url 'index' %}"><li>Lauren</li></a>
+			<a href="{% url 'education' %}"><li>Education</li></a>
+			<a href="{% url 'experience' %}"><li>Experience</li></a>
+			<a href="{% url 'more' %}"><li>More</li></a>
+			<a href="{% url 'contact' %}"><li>Contact</li></a>
+		</ul>
+		<ul class="right valign-wrapper white">
+			<li>
+				<a class="valign" href="https://www.linkedin.com/in/lcapelluto"><img class="valign" src="https://static.licdn.com/sc/h/9wcfzhuisnwhyauwp7t9xixy7"></a>
+			</li>
+			<li>
+				<a class="valign" href="https://github.com/lcapelluto"><img class="valign" src="http://yinyanghu.github.io/images/octocat.png"></a>
+			</li>
+			<li>
+				<a class="valign" href="https://www.instagram.com/laurencaps/"><img class="valign icon" src="http://hoganchua.hudbhi7gzmvkzpctzr6hwgk2lbnfnkerebgcjs6k8yq.netdna-cdn.com/wp-content/uploads/2016/05/Instagram2016_col-128px.png"></a>
+			</li>
+			<li>
+				<a class="valign" href="http://stackexchange.com/users/8545290/lauren-caps">
+				<img class="valign icon" src="http://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.png?v=c78bd457575a"></a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+
+{% block content %}
+<div class="container row top-pad">
+	<div class="col s4">
+		<img class="img-circle" src="{% static 'me.jpg' %}">
+	</div>
+	<div class="col s8 teal lighten-5">
+		<p> Here's a place to summarize who I am or my job experiences.</p>
+	</div>
+</div>
+{% endblock %}
+
+{% block messages %}
+{% if messages %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        {% for message in messages %}
+        Materialize.toast('{{ message|capfirst }}', 10000, 'alert-{{ message.tags }} green') 
+        {% endfor %}
+    });
+</script>
+{% endif %}
+{% endblock messages %}
+
+</body>
+</html>

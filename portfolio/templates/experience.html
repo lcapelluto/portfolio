@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% for obj in list %}
+<div class="container row">
+	<div class="col s12 valign-wrapper item">
+		<div class="col s1 valign">
+			<img width="100%" class="valign" src="{{ obj.company.logo }}">
+		</div>
+		<div class="col s10">
+			<h4 class="cyan-text text-darken-1">{{ obj.title }}</h4>
+			<div class="company">{{ obj.company.name }}, {{ obj.location }}</div>
+			<div class="description">{{ obj.description }}</div>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endblock %}
